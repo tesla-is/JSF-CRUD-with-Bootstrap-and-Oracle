@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Edit your records</title>
+        <h:outputStylesheet name="/css/bootstrap.min.css"></h:outputStylesheet>
+    </h:head>
+    <h:body>
+        <h:form id="form" class="form-horizontal">
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <h2 style="text-align: center" class="col-sm-4">Edit Your Record</h2>
+            </div>
+            <hr/>
+            <div class="form-group">
+                <h:outputLabel for="id" class="control-label col-sm-2">Id : </h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="id-id" value="#{editUser.id}" class="form-control"></h:inputText>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="name" class="control-label col-sm-2">Name : </h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="name-id" value="#{editUser.name}" class="form-control"></h:inputText>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="email" class="control-label col-sm-2">Email : </h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="email-id" value="#{editUser.email}" class="form-control"></h:inputText>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="password" class="control-label col-sm-2">Password : </h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="password-id" value="#{editUser.password}" class="form-control"></h:inputText>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="gender" class="control-label col-sm-2">Gender : </h:outputLabel>
+                <div class="col-sm-4">
+                    <h:selectOneRadio value="#{editUser.gender}">
+                        <f:selectItem itemLabel="Male" itemValue="Male"></f:selectItem>
+                        <f:selectItem itemLabel="Female" itemValue="Female"></f:selectItem>
+                    </h:selectOneRadio>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="address" class="control-label col-sm-2">Address : </h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputTextarea id="address-id" value="#{editUser.address}" class="form-control" cols="50" rows="5"></h:inputTextarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4">
+                    <center><h:commandButton value="Update" action="#{user.update(editUser)}" class="btn btn-primary" style="width: 80px"></h:commandButton></center>
+                </div>
+            </div>
+        </h:form>
+    </h:body>
+</html>
+
